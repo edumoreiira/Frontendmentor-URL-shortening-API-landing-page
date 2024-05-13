@@ -1,0 +1,18 @@
+nav{
+    margin-top: 3em;
+    display: flex;
+    align-items: start;
+    gap: var(--spacing);
+    width: 100%;
+
+    ul{
+        display: flex;
+        gap: var(--spacing);
+    }
+    .nav-items{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        font-weight: 700;
+    }
+}
