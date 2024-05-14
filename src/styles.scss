@@ -20,8 +20,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Poppins;
-    // color: hsl(260, 8%, 14%);
-    color: var(--dark-blue);
+    transition: color 100ms ease-in-out, background-color 150ms ease-in-out;
 }
 ul{
     list-style: none;
@@ -39,12 +38,33 @@ img{
 
 body{
     font-size: 18px;
+    color: var(--dark-blue);
 }
 
 .container{
     max-width: 1200px;
-    width: calc(100% - 240px);
+    width: calc(100% - 100px);
     margin: 0 auto;
+}
+
+button{
+    border: 0;
+    background-color: transparent;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.rounded-btn{
+    background-color: var(--primary-cyan);
+    padding: .7em 2em !important; 
+    border-radius: 100vh !important;
+    font-weight: 700;
+    color: white;
+    transition: opacity 100ms ease-in-out;
+    &:hover{
+        opacity: 0.5;
+    }
 }
 
 :root{
@@ -52,7 +72,10 @@ body{
     --primary--dark-violet: hsl(257, 27%, 26%);
     --dark-blue: hsl(255, 11%, 22%);
     --red: hsl(0, 87%, 67%);
+    --gray: hsl(0, 0%, 75%);
+    --grayish-violet: hsl(257, 7%, 63%);
     --spacing: 2em;
+    --bd-radius: .7em;
     // - Gray: hsl(0, 0%, 75%)
 // - Grayish Violet: hsl(257, 7%, 63%)
 // - Very Dark Blue: hsl(255, 11%, 22%)

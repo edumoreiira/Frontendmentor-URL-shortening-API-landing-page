@@ -3,16 +3,94 @@ nav{
     display: flex;
     align-items: start;
     gap: var(--spacing);
-    width: 100%;
-
+    position: relative;
     ul{
         display: flex;
         gap: var(--spacing);
+    }
+    .menu{
+        display: none;
     }
     .nav-items{
         width: 100%;
         display: flex;
         justify-content: space-between;
         font-weight: 700;
+        color: var(--grayish-violet);
+        .utilities{
+            li{
+                a:hover{
+                    color: var(--dark-blue);
+                }
+            }
+        }
+        .account{
+            .login{
+                font-weight: 700;
+                color: var(--grayish-violet);
+                &:hover{
+                    color: var(--dark-blue);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 930px) {
+    nav{
+        justify-content: space-between;
+        .menu{
+            display: flex;
+            font-size: 1.8em;
+            color: var(--grayish-violet);
+        }
+        .nav-items{
+            background-color: var(--primary--dark-violet);
+            position: absolute;
+            top: calc(100% + 1em);
+            left: 0;
+            color: white;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding-inline: 1em;
+            border-radius: var(--bd-radius);
+            transition: all 200ms ease-in-out;
+            overflow: hidden;
+            height: 430px;
+            ul{
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                li > *{
+                    padding: .5em 1.5em;
+                }
+            }
+            .utilities{
+                border-bottom: 2px solid var(--grayish-violet);
+                padding-bottom: var(--spacing);
+                li{
+                    a:hover{
+                        color: var(--primary-cyan);
+                    }
+                }
+            }
+            .account{
+                padding-top: var(--spacing);
+                li{
+                    width: 100%;
+                    text-align: center;
+                }
+                .login{
+                    color: white;
+                    &:hover{
+                        color: var(--primary-cyan);
+                    }
+                }
+                .sign-up{
+                    width: min(360px, 100%)
+                }
+            }
+        }
     }
 }
