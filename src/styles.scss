@@ -39,12 +39,16 @@ img{
 body{
     font-size: 18px;
     color: var(--dark-blue);
+    overflow-x: hidden;
 }
 
 .container{
     max-width: 1200px;
     width: calc(100% - 100px);
-    margin: 0 auto;
+    margin: 0 auto calc(var(--spacing)*2.5) auto;
+    @media (max-width: 550px) {
+        width: calc(100% - 50px);
+    }
 }
 
 button{
@@ -76,6 +80,7 @@ button{
     --grayish-violet: hsl(257, 7%, 63%);
     --spacing: 2em;
     --bd-radius: .7em;
+    --media: 930px;
     // - Gray: hsl(0, 0%, 75%)
 // - Grayish Violet: hsl(257, 7%, 63%)
 // - Very Dark Blue: hsl(255, 11%, 22%)

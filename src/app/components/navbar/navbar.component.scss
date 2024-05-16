@@ -48,7 +48,8 @@ nav{
             background-color: var(--primary--dark-violet);
             position: absolute;
             top: calc(100% + 1em);
-            left: 0;
+            right: 0;
+            width: min(400px, 100%);
             color: white;
             flex-direction: column;
             align-items: center;
@@ -57,7 +58,6 @@ nav{
             border-radius: var(--bd-radius);
             transition: all 200ms ease-in-out;
             overflow: hidden;
-            height: 430px;
             ul{
                 flex-direction: column;
                 align-items: center;
@@ -91,6 +91,14 @@ nav{
                     width: min(360px, 100%)
                 }
             }
+        }
+
+        .nav-items[data-togglenav="true"]{
+            height: 430px;
+        }
+        .nav-items[data-togglenav="false"]{
+            height: 0px;
+            visibility: hidden;
         }
     }
 }
