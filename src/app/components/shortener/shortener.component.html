@@ -3,4 +3,12 @@
     <input type="text" placeholder="Shorten a link here..." name="shortener" id="shortener">
     <button type="submit" class="shorten-btn">Shorten It!</button>
 </div>
+<div class="shortened">
+    <span class="main-url">https://twitter.com</span>
+    <div class="shortened-wrapper">
+        <span class="shortened-url">{{link}}</span>
+        <button [cdkCopyToClipboard]="link" class="copy-it-btn"><span>Copy</span></button>
+    </div>
+</div>
+
 </section>
