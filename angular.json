@@ -62,10 +62,12 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "Frontendmentor-URL-shortening-API-landing-page:build:production"
+              "buildTarget": "Frontendmentor-URL-shortening-API-landing-page:build:production",
+              "proxyConfig": "proxy.conf.json"
             },
             "development": {
-              "buildTarget": "Frontendmentor-URL-shortening-API-landing-page:build:development"
+              "buildTarget": "Frontendmentor-URL-shortening-API-landing-page:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

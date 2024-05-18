@@ -1,9 +1,27 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShortenerService {
 
-  constructor() { }
+  constructor(private http: HttpClient) { 
+    
+  }
+
+  private url = '/api/v1/shorten'
+
+
+  getShorten(): Observable<any>{
+    const body = new URLSearchParams();
+    body.set('url', 'https://google.com');
+    
+
+    const headers = new HttpHeaders({
+      'Content-Type': 'application/x-www-form-urlencoded'
+    })
+    return this.http.post(this.url, body.toString(), {headers: headers})
+  }
 }

@@ -1,0 +1,11 @@
+{
+  "/api": {
+    "target": "https://cleanuri.com/api",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug",
+    "pathRewrite": {
+      "^/api": ""
+    }
+  }
+}
