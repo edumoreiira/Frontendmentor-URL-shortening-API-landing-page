@@ -14,9 +14,9 @@ export class ShortenerService {
   private url = '/api/v1/shorten'
 
 
-  getShorten(): Observable<any>{
+  getShorten(url: string): Observable<any>{
     const body = new URLSearchParams();
-    body.set('url', 'https://google.com');
+    body.set('url', url);
     
 
     const headers = new HttpHeaders({

@@ -1,13 +1,21 @@
 <section class="shortener container">
 <div class="shorten-it">
-    <input type="text" placeholder="Shorten a link here..." name="shortener" id="shortener">
-    <button type="submit" class="shorten-btn">Shorten It!</button>
+    <div class="input-wrapper">
+        <input [ngClass]="{'error' : !isLinkValid}"
+         #linkInput type="text" placeholder="Shorten a link here..."
+          name="shortener" id="shortener" (keyup.enter)="generateLink(linkInput.value)">
+
+        <span *ngIf="!isLinkValid" class="invalid-search">{{error}}</span>
+    </div>
+    <button type="submit" class="shorten-btn" (click)="generateLink(linkInput.value)">Shorten It!</button>
 </div>
-<div class="shortened">
-    <span class="main-url">https://twitter.com</span>
+
+<!-- shortened card -->
+<div class="shortened" *ngFor="let shorten of shortenedLinks">
+    <span class="main-url">{{shorten.original_url}}</span>
     <div class="shortened-wrapper">
-        <span class="shortened-url">{{link}}</span>
-        <button [cdkCopyToClipboard]="link" class="copy-it-btn"><span>Copy</span></button>
+        <span #sLink class="shortened-url">{{shorten.result_url}}</span>
+        <button [cdkCopyToClipboard]="shorten.result_url" class="copy-it-btn"><span>Copy</span></button>
     </div>
 </div>
 
