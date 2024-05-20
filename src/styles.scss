@@ -48,7 +48,10 @@ body{
 .container{
     max-width: 1200px;
     width: calc(100% - 100px);
-    margin: 0 auto calc(var(--spacing)*2.5) auto;
+    // margin: 0 auto calc(var(--spacing)*2.5) auto;
+    margin: 0 auto;
+    padding-bottom: calc(var(--spacing) * 2.5);
+
     @media (max-width: 550px) {
         width: calc(100% - 50px);
     }
