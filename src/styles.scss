@@ -73,7 +73,7 @@ button{
     color: white;
     transition: opacity 100ms ease-in-out;
     &:hover{
-        opacity: 0.5;
+        background-color: var(--primary-cyan-hover);
     }
 }
 

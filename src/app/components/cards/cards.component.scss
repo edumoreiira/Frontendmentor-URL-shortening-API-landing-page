@@ -23,7 +23,7 @@
     .cards{
         margin-top: calc(var(--spacing) * 3);
         display: flex;
-
+        padding-bottom: calc(var(--spacing) * 3);
         .card:nth-child(3){
             transform: translateY(43.5px);
         }
@@ -68,10 +68,13 @@
 
 @media (max-width: 800px) {
     .about-us{
+        .statistics{
+            font-size: 1.2em;
+        }
         .cards{
             flex-direction: column;
-            align-items: center;
             margin-top: calc(var(--spacing)*4);
+            padding-bottom: calc(var(--spacing) * 1);
             .card{
                 align-items: center;
                 text-align: center;

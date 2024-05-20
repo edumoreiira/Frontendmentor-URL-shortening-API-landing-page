@@ -1,0 +1,26 @@
+.wrapper{
+    background-color: var(--primary--dark-violet);
+    color: white;
+    text-align: center;
+    font-size: 1.4em;
+    padding-block: calc(var(--spacing)* 1.2);
+    background-image: url("/assets/images/bg-boost-desktop.svg");
+    background-size: cover;
+    h1{
+        margin-bottom: .4em;
+        padding-inline: 20px;
+    }
+    button{
+        font-size: .8em;
+    }
+}
+
+@media (max-width: 450px) {
+    .wrapper{
+    background-image: url("/assets/images/bg-boost-mobile.svg");
+    padding-block: calc(var(--spacing)* 3);
+    h1{
+        font-size: 1em;
+    }
+    }
+}
