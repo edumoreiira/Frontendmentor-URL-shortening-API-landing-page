@@ -3,7 +3,7 @@ import { ShortenerService } from '../../services/shortener.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ClipboardModule } from '@angular/cdk/clipboard';
-import { Observable, shareReplay } from 'rxjs';
+import { Observable, shareReplay, take } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
 export interface ShortenedLink{
@@ -28,22 +28,28 @@ export class ShortenerComponent{
     
   }
   
-  shorten$?: Observable<ShortenedLink>;
+  // shorten$?: Observable<ShortenedLink>;
   shortenedLinks: ShortenedLink[] = [];
   isLinkValid = true;
   error ?: string;
   
 
   generateLink(link: string){
-    this.shorten$ = this.shortenerService.getShorten(link).pipe(
-      shareReplay()
-    )
-    
-    
-    this.shorten$.subscribe(
-      (shorten: ShortenedLink) => {
+
+    //stop request if current link is the same as a 
+    // link that has already been shortened
+    if(this.shortenedLinks.find(sLinks => sLinks.original_url === link)){
+
+      this.isLinkValid = false;
+      this.error = 'Link already shortened'
+      return
+    }
+
+
+    this.shortenerService.getShorten(link).subscribe({
+      next: (shorten: ShortenedLink) => {
       
-      //removes last link if < 3
+      //removes last link if array of shortened links is higher or equal to 3
       if (this.shortenedLinks.length >= 3){
         this.shortenedLinks.shift();
       }
@@ -51,11 +57,12 @@ export class ShortenerComponent{
       shorten.original_url = link;
       this.isLinkValid = true;
       this.shortenedLinks.push(shorten);
-      
-    }, (err) => {
+    }, 
+
+    error: (err) => {
       this.isLinkValid = false;
       this.error = link === '' ? 'Please add a link' : 'Please insert a valid link' 
-    })
+  }})
 
   }
 }

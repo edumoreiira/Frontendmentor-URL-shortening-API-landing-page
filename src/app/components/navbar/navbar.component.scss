@@ -6,7 +6,7 @@ nav{
     position: relative;
     ul{
         display: flex;
-        gap: var(--spacing);
+        gap: 36px;
     }
     .menu{
         display: none;
@@ -25,6 +25,11 @@ nav{
             }
         }
         .account{
+            align-items: center;
+            button{
+                font-size: 18px;
+            }
+            gap: 22px;
             .login{
                 font-weight: 700;
                 color: var(--grayish-violet);
@@ -59,16 +64,17 @@ nav{
             transition: all 200ms ease-in-out;
             overflow: hidden;
             ul{
+                font-size: 18px;
                 flex-direction: column;
                 align-items: center;
                 width: 100%;
                 li > *{
-                    padding: .5em 1.5em;
+                    padding: 9px 27px;
                 }
             }
             .utilities{
-                border-bottom: 2px solid var(--grayish-violet);
-                padding-bottom: var(--spacing);
+                border-bottom: 1px solid rgba(128, 128, 128, 0.342);
+                padding-bottom: 36px;
                 li{
                     a:hover{
                         color: var(--primary-cyan);
@@ -76,7 +82,7 @@ nav{
                 }
             }
             .account{
-                padding-top: var(--spacing);
+                padding-top: 36px;
                 li{
                     width: 100%;
                     text-align: center;
