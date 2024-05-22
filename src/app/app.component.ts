@@ -5,11 +5,12 @@ import { MainBannerComponent } from './components/main-banner/main-banner.compon
 import { ShortenerComponent } from './components/shortener/shortener.component';
 import { CardsComponent } from './components/cards/cards.component';
 import { BoostYourLinksComponent } from './components/boost-your-links/boost-your-links.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, MainBannerComponent, ShortenerComponent, CardsComponent, BoostYourLinksComponent],
+  imports: [RouterOutlet, NavbarComponent, MainBannerComponent, ShortenerComponent, CardsComponent, BoostYourLinksComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

@@ -1,0 +1,80 @@
+:host{
+    background-color: var(--very-dark-violet);
+    display: block;
+}
+footer{
+    font-size: clamp(.8em, 1.5vw, 1em);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding-block: calc(var(--spacing)*2);
+    .logo{
+        flex-shrink: 0;
+        img{
+            filter: brightness(100);
+        }
+    }
+    .info{
+        display: flex;
+        gap: calc(var(--spacing)*3);
+        a:hover{
+            color: var(--primary-cyan)
+        }
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: .6em;
+            .title{
+                margin-bottom: 1em;
+                font-weight: 700;
+                color: white;
+            }
+            li{
+                font-weight: 500;
+                color: var(--gray);
+            }
+        }
+        .social-medias{
+            display: flex;
+            flex-direction: row;
+            gap: 1em;
+            span{
+                display: block;
+                height: 24px;
+                width: 24px;
+                background-color: white; /* A cor que você deseja aplicar ao SVG */
+                -webkit-mask-size: cover;
+                mask-size: cover;
+                &:hover{
+                    background-color: var(--primary-cyan);
+                }
+            }
+            .facebook{
+                mask: url('/assets/images/icon-facebook.svg') no-repeat center;
+            }
+            .twitter{
+                mask: url('/assets/images/icon-twitter.svg') no-repeat center;
+            }
+            .pinterest{
+                mask: url('/assets/images/icon-pinterest.svg') no-repeat center;
+            }
+            .instagram{
+                mask: url('/assets/images/icon-instagram.svg') no-repeat center;
+            }
+            }
+    }
+}
+
+@media (max-width: 768px) {
+    footer{
+        font-size: 1em;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: calc(var(--spacing)*3);
+        .info{
+            flex-direction: column;
+        }
+    }
+}
